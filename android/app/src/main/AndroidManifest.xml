@@ -1,0 +1,71 @@
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="io.instamobile.chat.rn">
+
+    <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
+    <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" />
+    <uses-permission android:name="android.permission.SYSTEM_ALERT_WINDOW"/>
+    <uses-permission android:name="android.permission.RECEIVE_BOOT_COMPLETED" />
+    <uses-permission android:name="android.permission.VIBRATE" />
+    <uses-permission android:name="android.permission.CAMERA" />
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE"/>
+  
+    <uses-permission android:name="android.permission.FOREGROUND_SERVICE" />
+    <uses-permission android:name="android.permission.BIND_TELECOM_CONNECTION_SERVICE"/>
+    <uses-permission android:name="android.permission.READ_PHONE_STATE" />
+    <uses-permission android:name="android.permission.CALL_PHONE" />
+  
+    <uses-feature android:name="android.hardware.camera" />
+    <uses-feature android:name="android.hardware.camera.autofocus"/>
+
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE"/>
+    <uses-permission android:name="android.permission.MODIFY_AUDIO_SETTINGS" />
+    <uses-permission android:name="android.permission.RECORD_AUDIO" />
+    <uses-permission android:name="android.permission.WAKE_LOCK" />
+    <uses-permission android:name="android.permission.DISABLE_KEYGUARD" />
+
+    <application
+      android:name=".MainApplication"
+      android:label="@string/app_name"
+      android:icon="@mipmap/ic_launcher"
+      android:allowBackup="false"
+      android:supportsRtl="true"
+      android:usesCleartextTraffic="true"
+      android:theme="@style/AppTheme">
+      
+      <service android:name="io.invertase.firebase.messaging.RNFirebaseBackgroundMessagingService" />
+      <service android:name="io.wazo.callkeep.VoiceConnectionService"
+        android:label="Wazo"
+        android:permission="android.permission.BIND_TELECOM_CONNECTION_SERVICE">
+        <intent-filter>
+            <action android:name="android.telecom.ConnectionService" />
+        </intent-filter>
+      </service>
+      <service android:name="io.wazo.callkeep.RNCallKeepBackgroundMessagingService" />
+      <meta-data
+        android:name="com.google.android.geo.API_KEY"
+        android:value="AIzaSyDOJM4bdpX3wXWQyx1m5mkQCFohWn1S7pI"/>
+      <meta-data android:name="com.facebook.sdk.ApplicationId" android:value="@string/facebook_app_id"/>
+      <activity
+        android:name=".MainActivity"
+        android:label="@string/app_name"
+        android:configChanges="keyboard|keyboardHidden|orientation|screenSize|uiMode"
+        android:launchMode="singleTask"
+        android:screenOrientation="portrait"
+        android:windowSoftInputMode="adjustPan"
+        android:exported="true">
+        <intent-filter>
+            <action android:name="android.intent.action.MAIN" />
+            <category android:name="android.intent.category.LAUNCHER" />
+        </intent-filter>
+        <intent-filter android:label="filter_react_native">
+            <action android:name="android.intent.action.VIEW" />
+            <category android:name="android.intent.category.DEFAULT" />
+            <category android:name="android.intent.category.BROWSABLE" />
+            <data android:scheme="@string/app_name" android:host="app" />
+        </intent-filter>
+      </activity>
+      <activity android:name="com.facebook.react.devsupport.DevSettingsActivity" />
+    </application>
+
+</manifest>

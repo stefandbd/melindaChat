@@ -1,0 +1,22 @@
+require_relative '../node_modules/react-native/scripts/react_native_pods'
+require_relative '../node_modules/@react-native-community/cli-platform-ios/native_modules'
+require_relative '../node_modules/react-native-unimodules/cocoapods.rb'
+
+platform :ios, '13.0'
+
+$FirebaseSDKVersion = '8.0.0'
+
+target 'Messenger' do
+  # Uncomment the next line if you're using Swift or would like to use dynamic frameworks
+  # use_frameworks!
+
+  config = use_native_modules!
+  use_react_native!(:path => config["reactNativePath"])
+
+  pod 'GoogleSignIn', '~> 5.0.2'
+  pod 'ReactNativeART', :path => '../node_modules/@react-native-community/art'
+  pod 'react-native-twilio-video-webrtc', path: '../node_modules/react-native-twilio-video-webrtc'
+  pod 'React-RCTActionSheet', :path => '../node_modules/react-native/Libraries/ActionSheetIOS'
+
+  use_unimodules!
+end

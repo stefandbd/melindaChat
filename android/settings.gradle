@@ -1,0 +1,9 @@
+rootProject.name = 'Messenger'
+apply from: file("../node_modules/@react-native-community/cli-platform-android/native_modules.gradle"); applyNativeModulesSettingsGradle(settings)
+apply from: '../node_modules/react-native-unimodules/gradle.groovy'
+includeUnimodulesProjects()
+include ':react-native-google-signin'
+project(':react-native-google-signin').projectDir = new File(rootProject.projectDir, '../node_modules/@react-native-google-signin/google-signin/android')
+include ':react-native-twilio-video-webrtc'
+project(':react-native-twilio-video-webrtc').projectDir = new File(rootProject.projectDir, '../node_modules/react-native-twilio-video-webrtc/android')
+include ':app'
