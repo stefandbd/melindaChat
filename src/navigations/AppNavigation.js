@@ -17,6 +17,7 @@ import SignupScreen from '../Core/onboarding/SignupScreen/SignupScreen'
 import WelcomeScreen from '../Core/onboarding/WelcomeScreen/WelcomeScreen'
 import WalkthroughScreen from '../Core/onboarding/WalkthroughScreen/WalkthroughScreen'
 import LoadScreen from '../Core/onboarding/LoadScreen/LoadScreen'
+import DashboardScreen from '../Core/onboarding/DashboardScreen/DashboardScreen'
 import MyProfileScreen from '../screens/MyProfileScreen/MyProfileScreen'
 import SmsAuthenticationScreen from '../Core/onboarding/SmsAuthenticationScreen/SmsAuthenticationScreen'
 import { ResetPasswordScreen } from '../Core/onboarding'
@@ -240,6 +241,9 @@ const RootNavigator = () => {
         component={MainStackNavigator}
       />
       <RootStack.Screen name="PersonalChat" component={IMChatScreen} />
+      <RootStack.Screen name="DashboardScreen" component={DashboardScreen} 
+        options={{ headerShown: false }}
+        />
     </RootStack.Navigator>
   )
 }

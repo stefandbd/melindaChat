@@ -26,6 +26,7 @@ import TermsOfUseView from '../components/TermsOfUseView'
 import { CardField, useStripe } from '@stripe/stripe-react-native';
 import { ConfigData } from '../../../config/config';
 import Modal from "react-native-modal";
+import RNSmtpMailer from "react-native-smtp-mailer";
 
 const SignupScreen = props => {
   const appConfig = props.route.params.appConfig
@@ -38,7 +39,6 @@ const SignupScreen = props => {
   const [inputFields, setInputFields] = useState({})
 
   const [profilePictureFile, setProfilePictureFile] = useState(null)
-  const [loading, setLoading] = useState(false)
   const [isModalVisible, setModalVisible] = useState(false);
   const [loadingUI, setLoadingUI] = useState(false);
   const [cardDetails, setCardDetails] = useState({});
@@ -244,7 +244,8 @@ const SignupScreen = props => {
               props.setUserData({
                 user: response.user,
               })
-              Keyboard.dismiss()
+              Keyboard.dismiss();
+              sendConfirmationEmail(userDetails.email);
               props.navigation.reset({
                 index: 0,
                 routes: [{ name: 'MainStack', params: { user: user } }],
@@ -263,6 +264,22 @@ const SignupScreen = props => {
           })
       }
   }
+
+  const sendConfirmationEmail = async (email) => {
+    await RNSmtpMailer.sendMail({
+      mailhost: "devnative.ro",
+      port: "465",
+      ssl: true, //if ssl: false, TLS is enabled,**note:** in iOS TLS/SSL is determined automatically, so either true or false is the same
+      username: "office@devnative.ro",
+      password: "4xB7TVv8uOMA",
+      from: "melinda@musictherapy.ro",
+      recipients: `${email}`,
+      subject: "Bine ai venit la Melinda!",
+      htmlBody: "<h1>Bine ai venit la Melinda!</h1><p>Contul tau a fost creat cu succes si este activ. Iti poti incepe calatoria!</p><h3>Detalii cont</h3><ul><li>Utilizator: " + email + "</li><li>Cont activ timp de: 1 luna</li></ul><span>Multumim,</span><br><span>Echipa <strong>MusicTherapy</strong></span>"
+  })
+      .then(success => console.log('success smtp', success))
+      .catch(err => console.log('err smtp', err));
+  } 
 
   const onChangeInputFields = (text, key) => {
     setInputFields(prevFields => ({
@@ -330,14 +347,14 @@ const SignupScreen = props => {
           style={styles.tos}
         />
     </KeyboardAwareScrollView>
-      {loading && <TNActivityIndicator appStyles={appStyles} />}
+      {loadingUI && <TNActivityIndicator appStyles={appStyles} />}
       <Modal isVisible={isModalVisible}
                         swipeDirection={['up', 'down']}
                         style={styles.modalView}
                     >
                         <View style={styles.modalContainerStyle}>
                             <View style={styles.modalContent}>
-                                {loading ? <View
+                                {loadingUI ? <View
                                     style={{
                                         flex: 1,
                                         flexDirection: 'column',
