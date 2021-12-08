@@ -52,9 +52,12 @@ const WelcomeScreen = props => {
               user: response.user,
             })
             Keyboard.dismiss()
-            props.navigation.reset({
-              index: 0,
-              routes: [{ name: 'MainStack', params: { user: user } }],
+            // props.navigation.reset({
+            //   index: 0,
+            //   routes: [{ name: 'MainStack', params: { user: user } }],
+            // })
+            props.navigation.push('DashboardScreen', {
+              user: user,
             })
           } else {
             setLoading(false)

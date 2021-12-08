@@ -94,6 +94,7 @@
     "react-native-search-bar": "^3.5.1",
     "react-native-search-box": "^0.0.19",
     "react-native-slider": "^0.11.0",
+    "react-native-smtp-mailer": "^1.2.5",
     "react-native-twilio-video-webrtc": "https://github.com/blackuy/react-native-twilio-video-webrtc",
     "react-native-ui-lib": "^5.19.0",
     "react-native-unimodules": "^0.14.6",

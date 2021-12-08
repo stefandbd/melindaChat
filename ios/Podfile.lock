@@ -189,6 +189,7 @@ PODS:
   - libwebp/mux (1.2.1):
     - libwebp/demux
   - libwebp/webp (1.2.1)
+  - mailcore2-ios (0.6.4)
   - mobile-ffmpeg-https (4.4)
   - nanopb (2.30908.0):
     - nanopb/decode (= 2.30908.0)
@@ -546,6 +547,9 @@ PODS:
     - React-Core
   - RNSearchBar (3.5.1):
     - React
+  - RNSmtpMailer (1.2.5):
+    - mailcore2-ios
+    - React-Core
   - RNVectorIcons (7.1.0):
     - React
   - RNVoipPushNotification (2.1.0):
@@ -659,6 +663,7 @@ DEPENDENCIES:
   - RNReanimated (from `../node_modules/react-native-reanimated`)
   - RNScreens (from `../node_modules/react-native-screens`)
   - RNSearchBar (from `../node_modules/react-native-search-bar`)
+  - RNSmtpMailer (from `../node_modules/react-native-smtp-mailer`)
   - RNVectorIcons (from `../node_modules/react-native-vector-icons`)
   - RNVoipPushNotification (from `../node_modules/react-native-voip-push-notification`)
   - "stripe-react-native (from `../node_modules/@stripe/stripe-react-native`)"
@@ -688,6 +693,7 @@ SPEC REPOS:
     - GTMAppAuth
     - GTMSessionFetcher
     - libwebp
+    - mailcore2-ios
     - mobile-ffmpeg-https
     - nanopb
     - PromisesObjC
@@ -848,6 +854,8 @@ EXTERNAL SOURCES:
     :path: "../node_modules/react-native-screens"
   RNSearchBar:
     :path: "../node_modules/react-native-search-bar"
+  RNSmtpMailer:
+    :path: "../node_modules/react-native-smtp-mailer"
   RNVectorIcons:
     :path: "../node_modules/react-native-vector-icons"
   RNVoipPushNotification:
@@ -901,6 +909,7 @@ SPEC CHECKSUMS:
   GTMAppAuth: ad5c2b70b9a8689e1a04033c9369c4915bfcbe89
   GTMSessionFetcher: 43748f93435c2aa068b1cbe39655aaf600652e91
   libwebp: 98a37e597e40bfdb4c911fc98f2c53d0b12d05fc
+  mailcore2-ios: 3ff0be2fa553d4da9c11d39c11d51863c768f24f
   mobile-ffmpeg-https: 311fc4a8f671cf36d1d6b8f421e8246b790978d9
   nanopb: a0ba3315591a9ae0a16a309ee504766e90db0c96
   PromisesObjC: 68159ce6952d93e17b2dfe273b8c40907db5ba58
@@ -961,6 +970,7 @@ SPEC CHECKSUMS:
   RNReanimated: 514a11da3a2bcc6c3dfd9de32b38e2b9bf101926
   RNScreens: f7ad633b2e0190b77b6a7aab7f914fad6f198d8d
   RNSearchBar: 9860431356b7d12a8449d2fddb2b5f3c78d1e99f
+  RNSmtpMailer: 6a2e04d58d3f0bee8d2faccd67280b9a9ebc2b7f
   RNVectorIcons: bc69e6a278b14842063605de32bec61f0b251a59
   RNVoipPushNotification: 6b38227bbbb2359dc11cbf826044f8ed4bd8de36
   SDWebImage: 4dc3e42d9ec0c1028b960a33ac6b637bb432207b
