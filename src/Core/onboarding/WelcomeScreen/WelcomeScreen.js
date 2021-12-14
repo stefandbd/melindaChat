@@ -14,6 +14,7 @@ import { AppImages } from '../../../theme'
 import { connect } from 'react-redux'
 import { KeyboardAwareScrollView } from 'react-native-keyboard-aware-scroll-view'
 import { localizedErrorMessage } from '../utils/ErrorCode'
+import { ConfigData } from '../../../config/config';
 
 const WelcomeScreen = props => {
   const currentUser = useSelector(state => state.auth.user)
@@ -37,40 +38,68 @@ const WelcomeScreen = props => {
     const [email, setEmail] = useState('')
     const [password, setPassword] = useState('')
   
-    const onPressLogin = () => {
-      setLoading(true)
-      authManager
-        .loginWithEmailAndPassword(
-          email && email.trim(),
-          password && password.trim(),
-          appConfig,
-        )
-        .then(response => {
-          if (response?.user) {
-            const user = response.user
-            props.setUserData({
-              user: response.user,
-            })
-            Keyboard.dismiss()
-            // props.navigation.reset({
-            //   index: 0,
-            //   routes: [{ name: 'MainStack', params: { user: user } }],
-            // })
-            props.navigation.push('DashboardScreen', {
-              user: user,
-            })
-          } else {
-            setLoading(false)
-            Alert.alert(
-              '',
-              localizedErrorMessage(response.error),
-              [{ text: IMLocalized('OK') }],
-              {
-                cancelable: false,
-              },
-            )
-          }
+    const onPressLogin = async () => {
+      setLoading(true);
+      const res = await fetch(`${ConfigData.getSubscriptionStatus}`, {
+        method: 'POST',
+        headers: {
+            "Content-Type": "application/json",
+        },
+        body: JSON.stringify({
+            'email': email,
         })
+    })
+        .then(res => {
+            console.log('res', res);
+            return res.json();
+        })
+        .then((data) => {
+            console.log('data', data);
+            setIsLoading(false);
+            const { subscriptions } = data.customer[0];
+            const isActive = subscriptions.data[0].status;
+            if (isActive === 'active') {
+              authManager
+              .loginWithEmailAndPassword(
+                email && email.trim(),
+                password && password.trim(),
+                appConfig,
+              )
+              .then(response => {
+                if (response?.user) {
+                  const user = response.user
+                  props.setUserData({
+                    user: response.user,
+                  })
+                  Keyboard.dismiss()
+                  // props.navigation.reset({
+                  //   index: 0,
+                  //   routes: [{ name: 'MainStack', params: { user: user } }],
+                  // })
+                  props.navigation.push('DashboardScreen', {
+                    user: user,
+                  })
+                } else {
+                  setLoading(false)
+                  Alert.alert(
+                    '',
+                    localizedErrorMessage(response.error),
+                    [{ text: IMLocalized('OK') }],
+                    {
+                      cancelable: false,
+                    },
+                  )
+                }
+              })
+            } else {
+                alert('Contul tau nu este platit!')
+            }
+            return data;
+        })
+        .catch(e => {
+            setIsLoading(false);
+            alert(e.message);
+        });
     }
   
     const onForgotPassword = async () => {
