@@ -32,21 +32,22 @@ const LoadScreen = props => {
   const setAppState = async () => {
     const shouldShowOnboardingFlow =
       await deviceStorage.getShouldShowOnboardingFlow()
-    if (!shouldShowOnboardingFlow) {
-      if (appConfig?.isDelayedLoginEnabled) {
-        fetchPersistedUserIfNeeded()
-        return
-      }
+    // if (!shouldShowOnboardingFlow) {
+    //   if (appConfig?.isDelayedLoginEnabled) {
+    //     fetchPersistedUserIfNeeded()
+    //     return
+    //   }
       navigation.navigate('LoginStack', {
         appStyles: appStyles,
         appConfig: appConfig,
       })
-    } else {
-      navigation.navigate('Walkthrough', {
-        appStyles: appStyles,
-        appConfig: appConfig,
-      })
-    }
+    // } 
+    // else {
+    //   navigation.navigate('Walkthrough', {
+    //     appStyles: appStyles,
+    //     appConfig: appConfig,
+    //   })
+    // }
   }
 
   const fetchPersistedUserIfNeeded = async () => {
