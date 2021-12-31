@@ -47,6 +47,7 @@ const SignupScreen = props => {
   const [key, setKey] = useState('');
   const { confirmPayment, createPaymentMethod, confirmCardPayment } = useStripe();
   const registerDisabled = false;
+  console.log('inputFileds', inputFields);
 
   useEffect(() => {
     async function fetchMyAPI() {
@@ -85,6 +86,28 @@ const SignupScreen = props => {
 
   const onModalPress = async () => {
         setModalVisible(!isModalVisible);
+}
+
+const onOpenModal = () => {
+  if (inputFields?.password !== inputFields?.repassword) {
+    Alert.alert(
+      '',
+      IMLocalized('Passwords dont match'),
+      [{ text: IMLocalized('OK') }],
+      {
+        cancelable: false,
+      },
+    )
+    setInputFields(prevFields => ({
+      ...prevFields,
+      password: '',
+      repassword: '',
+    }))
+    return
+  }
+  else {
+  setModalVisible(true);
+  }
 }
 
   const trimFields = fields => {
@@ -314,7 +337,7 @@ const SignupScreen = props => {
           containerStyle={styles.signupContainer}
           style={styles.signupText}
           // onPress={() => onRegister()}>
-          onPress={() => setModalVisible(true)}>
+          onPress={() => onOpenModal()}>
           {IMLocalized('Pay & Sign Up')}
         </Button>
       </>

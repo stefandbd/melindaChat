@@ -133,6 +133,16 @@ const ChatConfig = {
       placeholder: 'Password',
       autoCapitalize: 'none',
     },
+    {
+      displayName: IMLocalized('Repeat Password'),
+      type: 'default',
+      secureTextEntry: true,
+      editable: true,
+      regex: regexForNames,
+      key: 'repassword',
+      placeholder: 'Repeat Password',
+      autoCapitalize: 'none',
+    },
   ],
   editProfileFields: {
     sections: [
