@@ -9,6 +9,7 @@ import {
   View,
   ImageBackground,
   ActivityIndicator,
+  KeyboardAvoidingView,
 } from 'react-native'
 import Button from 'react-native-button'
 import CustomButton from '../../../components/CustomButton';
@@ -352,6 +353,7 @@ const SignupScreen = props => {
                         swipeDirection={['up', 'down']}
                         style={styles.modalView}
                     >
+                         <KeyboardAvoidingView behavior="padding" style={{display: 'flex', flex: 1}}>
                         <View style={styles.modalContainerStyle}>
                             <View style={styles.modalContent}>
                                 {loadingUI ? <View
@@ -400,7 +402,7 @@ const SignupScreen = props => {
                                 </>}
                             </View>
                         </View>
-
+                        </KeyboardAvoidingView>
                     </Modal>
     </View>
     </ImageBackground>
