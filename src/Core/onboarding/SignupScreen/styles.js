@@ -239,10 +239,15 @@ const dynamicStyles = (appStyles, colorScheme) => {
   amountContainer: {
       backgroundColor: 'rgba(255,255,255,0.5)',
       borderRadius: 5,
-      marginBottom: 10,
+      marginTop: 20,
       padding: 10,
       height: 40,
-      width: AppSizes.screen.width * 0.9,
+      width: AppSizes.screen.width * 0.75,
+      alignSelf: 'center',
+      alignItems: 'center'
+  },
+  amountText: {
+    fontSize: 16,
   },
   welcome: {
       color: AppColors.textWhite,

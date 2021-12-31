@@ -332,6 +332,9 @@ const onOpenModal = () => {
     return (
       <>
         {appConfig.signupFields.map(renderInputField)}
+        <TouchableOpacity disabled style={styles.amountContainer}>
+          <Text style={styles.amountText}>111€/luna</Text>
+        </TouchableOpacity>
         <Button
           containerStyle={styles.signupContainer}
           style={styles.signupText}
