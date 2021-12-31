@@ -47,7 +47,6 @@ const SignupScreen = props => {
   const [key, setKey] = useState('');
   const { confirmPayment, createPaymentMethod, confirmCardPayment } = useStripe();
   const registerDisabled = false;
-  console.log('inputFileds', inputFields);
 
   useEffect(() => {
     async function fetchMyAPI() {
