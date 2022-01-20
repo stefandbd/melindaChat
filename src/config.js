@@ -74,6 +74,14 @@ const ChatConfig = {
             : DynamicAppStyles.iconSet.user_android,
         navigationPath: 'MyProfileStack',
       },
+      {
+        title: IMLocalized('Dashboard'),
+        icon:
+          Platform.OS === 'ios'
+            ? DynamicAppStyles.iconSet.backArrow
+            : DynamicAppStyles.iconSet.backArrow,
+        navigationPath: 'DashboardScreen',
+      },
     ],
     lowerMenu: [],
   },

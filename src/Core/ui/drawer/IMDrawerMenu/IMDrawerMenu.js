@@ -1,6 +1,5 @@
-import React, { useState } from 'react'
-import PropTypes from 'prop-types'
-import { View, Text, Image, Platform } from 'react-native'
+import React from 'react'
+import { View, Text, Image } from 'react-native'
 import { useSelector, useDispatch } from 'react-redux'
 import { useColorScheme } from 'react-native-appearance'
 import dynamicStyles from './styles'

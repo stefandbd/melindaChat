@@ -11,10 +11,10 @@ PODS:
     - UMCore
   - EXBlur (9.0.3):
     - UMCore
-  - EXCamera (11.2.2):
+  - EXCamera (11.3.1):
     - ExpoModulesCore
     - UMCore
-  - EXConstants (11.0.1):
+  - EXConstants (11.0.2):
     - ExpoModulesCore
     - UMCore
   - EXFacebook (11.3.1):
@@ -37,7 +37,7 @@ PODS:
     - UMCore
   - EXLocalization (10.2.0):
     - UMCore
-  - EXLocation (12.1.2):
+  - EXLocation (12.1.3):
     - ExpoModulesCore
     - UMCore
     - UMTaskManagerInterface
@@ -118,15 +118,15 @@ PODS:
     - FirebaseCoreDiagnostics (~> 8.0)
     - GoogleUtilities/Environment (~> 7.4)
     - GoogleUtilities/Logger (~> 7.4)
-  - FirebaseCoreDiagnostics (8.10.0):
+  - FirebaseCoreDiagnostics (8.11.0):
     - GoogleDataTransport (~> 9.1)
-    - GoogleUtilities/Environment (~> 7.6)
-    - GoogleUtilities/Logger (~> 7.6)
+    - GoogleUtilities/Environment (~> 7.7)
+    - GoogleUtilities/Logger (~> 7.7)
     - nanopb (~> 2.30908.0)
-  - FirebaseInstallations (8.10.0):
+  - FirebaseInstallations (8.11.0):
     - FirebaseCore (~> 8.0)
-    - GoogleUtilities/Environment (~> 7.6)
-    - GoogleUtilities/UserDefaults (~> 7.6)
+    - GoogleUtilities/Environment (~> 7.7)
+    - GoogleUtilities/UserDefaults (~> 7.7)
     - PromisesObjC (< 3.0, >= 1.2)
   - FirebaseMessaging (8.0.0):
     - FirebaseCore (~> 8.0)
@@ -157,24 +157,24 @@ PODS:
     - AppAuth (~> 1.2)
     - GTMAppAuth (~> 1.0)
     - GTMSessionFetcher/Core (~> 1.1)
-  - GoogleUtilities/AppDelegateSwizzler (7.6.0):
+  - GoogleUtilities/AppDelegateSwizzler (7.7.0):
     - GoogleUtilities/Environment
     - GoogleUtilities/Logger
     - GoogleUtilities/Network
-  - GoogleUtilities/Environment (7.6.0):
+  - GoogleUtilities/Environment (7.7.0):
     - PromisesObjC (< 3.0, >= 1.2)
-  - GoogleUtilities/Logger (7.6.0):
+  - GoogleUtilities/Logger (7.7.0):
     - GoogleUtilities/Environment
-  - GoogleUtilities/MethodSwizzler (7.6.0):
+  - GoogleUtilities/MethodSwizzler (7.7.0):
     - GoogleUtilities/Logger
-  - GoogleUtilities/Network (7.6.0):
+  - GoogleUtilities/Network (7.7.0):
     - GoogleUtilities/Logger
     - "GoogleUtilities/NSData+zlib"
     - GoogleUtilities/Reachability
-  - "GoogleUtilities/NSData+zlib (7.6.0)"
-  - GoogleUtilities/Reachability (7.6.0):
+  - "GoogleUtilities/NSData+zlib (7.7.0)"
+  - GoogleUtilities/Reachability (7.7.0):
     - GoogleUtilities/Logger
-  - GoogleUtilities/UserDefaults (7.6.0):
+  - GoogleUtilities/UserDefaults (7.7.0):
     - GoogleUtilities/Logger
   - GTMAppAuth (1.2.2):
     - AppAuth/Core (~> 1.4)
@@ -396,33 +396,33 @@ PODS:
     - react-native-config/App (= 1.4.5)
   - react-native-config/App (1.4.5):
     - React-Core
-  - react-native-create-thumbnail (1.4.1):
+  - react-native-create-thumbnail (1.5.1):
+    - React-Core
+  - react-native-ffmpeg (0.5.2):
     - React
-  - react-native-ffmpeg (0.5.1):
-    - React
-    - react-native-ffmpeg/https (= 0.5.1)
-  - react-native-ffmpeg/https (0.5.1):
+    - react-native-ffmpeg/https (= 0.5.2)
+  - react-native-ffmpeg/https (0.5.2):
     - mobile-ffmpeg-https (= 4.4)
     - React
   - react-native-geolocation (2.0.2):
     - React
-  - react-native-get-random-values (1.7.0):
+  - react-native-get-random-values (1.7.2):
     - React-Core
   - react-native-image-resizer (1.4.5):
     - React-Core
-  - react-native-safe-area-context (3.3.0):
+  - react-native-safe-area-context (3.3.2):
     - React-Core
   - react-native-slider (3.0.3):
     - React
   - react-native-twilio-video-webrtc (2.0.0):
     - React
-    - TwilioVideo (~> 4.1)
-  - react-native-video (5.1.1):
+    - TwilioVideo (~> 4.6)
+  - react-native-video (5.2.0):
     - React-Core
-    - react-native-video/Video (= 5.1.1)
-  - react-native-video/Video (5.1.1):
+    - react-native-video/Video (= 5.2.0)
+  - react-native-video/Video (5.2.0):
     - React-Core
-  - react-native-webrtc (1.92.0):
+  - react-native-webrtc (1.94.1):
     - React-Core
   - react-native-webview (10.10.2):
     - React-Core
@@ -502,7 +502,7 @@ PODS:
     - React
   - RNAppleAuthentication (1.1.2):
     - React
-  - RNCallKeep (4.2.0):
+  - RNCallKeep (4.3.1):
     - React
   - RNCAsyncStorage (1.12.1):
     - React-Core
@@ -510,18 +510,18 @@ PODS:
     - React
   - RNDeviceInfo (6.2.1):
     - React-Core
-  - RNFastImage (8.3.7):
+  - RNFastImage (8.5.11):
     - React-Core
-    - SDWebImage (~> 5.8)
-    - SDWebImageWebPCoder (~> 0.6.1)
-  - RNFBApp (12.4.0):
+    - SDWebImage (~> 5.11.1)
+    - SDWebImageWebPCoder (~> 0.8.4)
+  - RNFBApp (12.9.3):
     - Firebase/CoreOnly (= 8.0.0)
     - React-Core
-  - RNFBAuth (12.4.0):
+  - RNFBAuth (12.9.3):
     - Firebase/Auth (= 8.0.0)
     - React-Core
     - RNFBApp
-  - RNFBMessaging (12.4.0):
+  - RNFBMessaging (12.9.3):
     - Firebase/Messaging (= 8.0.0)
     - React-Core
     - RNFBApp
@@ -554,12 +554,12 @@ PODS:
     - React
   - RNVoipPushNotification (2.1.0):
     - React-Core
-  - SDWebImage (5.12.1):
-    - SDWebImage/Core (= 5.12.1)
-  - SDWebImage/Core (5.12.1)
-  - SDWebImageWebPCoder (0.6.1):
+  - SDWebImage (5.11.1):
+    - SDWebImage/Core (= 5.11.1)
+  - SDWebImage/Core (5.11.1)
+  - SDWebImageWebPCoder (0.8.4):
     - libwebp (~> 1.0)
-    - SDWebImage/Core (~> 5.7)
+    - SDWebImage/Core (~> 5.10)
   - Stripe (21.9.1):
     - Stripe/Stripe3DS2 (= 21.9.1)
     - StripeCore (= 21.9.1)
@@ -574,10 +574,10 @@ PODS:
   - StripeUICore (21.9.1):
     - StripeCore (= 21.9.1)
   - TOCropViewController (2.6.0)
-  - TwilioVideo (4.6.2)
+  - TwilioVideo (4.6.3)
   - UMAppLoader (2.2.0)
-  - UMCore (7.1.1)
-  - UMReactNativeAdapter (6.3.5):
+  - UMCore (7.1.2)
+  - UMReactNativeAdapter (6.3.9):
     - ExpoModulesCore
     - React-Core
     - UMCore
@@ -879,33 +879,33 @@ SPEC CHECKSUMS:
   DoubleConversion: cf9b38bf0b2d048436d9a82ad2abe1404f11e7de
   EXAV: 67bcc1d0afeb1fab854b206c84b9f2afbd61d0cd
   EXBlur: 50d490040f3b14898ed8198d5125dc699189f4d9
-  EXCamera: 042b334f6ee9b918855fe4c4f155d4c372300a5f
-  EXConstants: 3babb61f8f4bb7dffe85b8b7d6eaa31d903e4d7e
+  EXCamera: f8e616b0154eb8981b95dfe72792c996f80999a4
+  EXConstants: 4cb52b6d8f636c767104a44bf7db3873e9c01a6f
   EXFacebook: 20b1e88252d99ace0018aee6ec3e0bbd6a3df3bb
   EXFileSystem: 0a04aba8da751b9ac954065911bcf166503f8267
   EXFirebaseCore: 91c80c7b929c77a4934b120cb7756e33a0decb22
   EXImageLoader: d3531a3fe530b22925c19977cb53bb43e3821fe6
   EXImagePicker: ce9648d2505fff28bde0d7a0a3b0aee5fd038989
   EXLocalization: 356f4e16a606cec21a77d6250528fde526152b45
-  EXLocation: bc7fe9071f65bb5ef6acc13d29a49d57d52c9e64
+  EXLocation: 6fbf8c499f752459c8906f0e3241d99748e02db8
   EXPermissions: 916efb5b817cb0a40160c0cd2f369af3c23a78be
   ExpoModulesCore: 2734852616127a6c1fc23012197890a6f3763dc7
   FacebookSDK: 4b9bb8e2824898b47f18c666dc145c09b40609e6
   FBLazyVector: e686045572151edef46010a6f819ade377dfeb4b
-  FBReactNativeSpec: f4f0e57b111b58998546b9e8815878b3288dce77
+  FBReactNativeSpec: 645ece05e31963955487db5b8564f1206b3b30b4
   FBSDKCoreKit: dace5abafc2fd9272733e6d027bcf18102712117
   Firebase: 73c3e3b216ec1ecbc54d2ffdd4670c65c749edb1
   FirebaseAnalytics: dcb92c7c9ef4fa7ffac276e8f87bd4fc8c97f1b8
   FirebaseAuth: b8cd992fca5b53dc6eec09e873a3f375f000c5a1
   FirebaseCore: 3f09591d51292843e2a46f18358d60bf4e996255
-  FirebaseCoreDiagnostics: 56fb7216d87e0e6ec2feddefa9d8a392fe8b2c18
-  FirebaseInstallations: 830327b45345ffc859eaa9c17bcd5ae893fd5425
+  FirebaseCoreDiagnostics: 64d9709d804a6c25bd77841371c1fcfd909d5601
+  FirebaseInstallations: 044eede8a049bce71c4541ee68d6e4364fcbe774
   FirebaseMessaging: 1a33b4af3c8042ed6ddacb6c031894af2064bfab
   glog: 73c2498ac6884b13ede40eda8228cb1eee9d9d62
   GoogleAppMeasurement: c6bbc9753d046b5456dd4f940057fbad2c28419e
   GoogleDataTransport: 629c20a4d363167143f30ea78320d5a7eb8bd940
   GoogleSignIn: 7137d297ddc022a7e0aa4619c86d72c909fa7213
-  GoogleUtilities: 684ee790a24f73ebb2d1d966e9711c203f2a4237
+  GoogleUtilities: e0913149f6b0625b553d70dae12b49fc62914fd1
   GTMAppAuth: ad5c2b70b9a8689e1a04033c9369c4915bfcbe89
   GTMSessionFetcher: 43748f93435c2aa068b1cbe39655aaf600652e91
   libwebp: 98a37e597e40bfdb4c911fc98f2c53d0b12d05fc
@@ -926,16 +926,16 @@ SPEC CHECKSUMS:
   React-jsinspector: cc614ec18a9ca96fd275100c16d74d62ee11f0ae
   react-native-appearance: 0f0e5fc2fcef70e03d48c8fe6b00b9158c2ba8aa
   react-native-config: 6502b1879f97ed5ac570a029961fc35ea606cd14
-  react-native-create-thumbnail: d31c84dd69fb4d60aec0ff2f49bc0de41ede7b2c
-  react-native-ffmpeg: 9fbe53d5afd6f35978804756f58238cf9340d1d8
+  react-native-create-thumbnail: dedcb7cd3d14a4b6cc2026563197242081edb52b
+  react-native-ffmpeg: 587fa045f985d775107f4b8cbb6c79df0ad68e63
   react-native-geolocation: c956aeb136625c23e0dce0467664af2c437888c9
-  react-native-get-random-values: 237bffb1c7e05fb142092681531810a29ba53015
+  react-native-get-random-values: 30b3f74ca34e30e2e480de48e4add2706a40ac8f
   react-native-image-resizer: d9fb629a867335bdc13230ac2a58702bb8c8828f
-  react-native-safe-area-context: 61c8c484a3a9e7d1fda19f7b1794b35bbfd2262a
+  react-native-safe-area-context: 584dc04881deb49474363f3be89e4ca0e854c057
   react-native-slider: e99fc201cefe81270fc9d81714a7a0f5e566b168
-  react-native-twilio-video-webrtc: 5b40ee0129687cb89fb5055680aed35c8db4be07
-  react-native-video: 0bb76b6d6b77da3009611586c7dbf817b947f30e
-  react-native-webrtc: bbb644859dcc37ccb7edaec860ca62ed47bf996c
+  react-native-twilio-video-webrtc: 88644618261216298b24891a4ccd224821b4e409
+  react-native-video: a4c2635d0802f983594b7057e1bce8f442f0ad28
+  react-native-webrtc: 2f20515f3ebb9dbf1f2aad638cc7573396cf948f
   react-native-webview: 0aa2cde4ee7e3e1c5fffdf64dbce9c709aa18155
   React-perflogger: 25373e382fed75ce768a443822f07098a15ab737
   React-RCTActionSheet: af7796ba49ffe4ca92e7277a5d992d37203f7da5
@@ -955,14 +955,14 @@ SPEC CHECKSUMS:
   ReactNativeKeyboardTrackingView: 02137fac3b2ebd330d74fa54ead48b14750a2306
   ReactNativeUiLib: cde7263a7d308b60161cd286f95c9433e79f2f7d
   RNAppleAuthentication: 473b2c076f1a48a537610580a168c1fb6d0a90c6
-  RNCallKeep: 8cbaafb72c4a1738f4a6e70fdaf041a14083ce5b
+  RNCallKeep: 3ac23a8074aa4b25901a437ee4c6fcbbd7509bfd
   RNCAsyncStorage: b03032fdbdb725bea0bd9e5ec5a7272865ae7398
   RNCMaskedView: 0e1bc4bfa8365eba5fbbb71e07fbdc0555249489
   RNDeviceInfo: 9b6aba9ffaed69ecb72bd13c7bcb0debf277bc9f
-  RNFastImage: a7384db75df352500261e8e8f1ac2026def26102
-  RNFBApp: 2f9c9a30d60810b5606f5f3f6557bdbcf91585ca
-  RNFBAuth: 1ce0dd8e1694af251a50368d8b330cc1fd2afb16
-  RNFBMessaging: 8a3049cbe63a45e4880b46b6755a6b9046e4fc9d
+  RNFastImage: 1f2cab428712a4baaf78d6169eaec7f622556dd7
+  RNFBApp: bf2f94f04eaf81e1d33950e57d63a7e3192c07d8
+  RNFBAuth: 07ff40f52ac2e49b67c5ac4e63b5d0a79e38bec0
+  RNFBMessaging: c21bf720f2e1c58728ea8779d78fc950aaa4f379
   RNGestureHandler: a479ebd5ed4221a810967000735517df0d2db211
   RNGoogleSignin: e64616a4080cf7d83f4b292fad82d174587444e2
   RNImageCropPicker: 530e8b69d97f80e03bc9f3b2cb64412312824330
@@ -973,20 +973,20 @@ SPEC CHECKSUMS:
   RNSmtpMailer: 6a2e04d58d3f0bee8d2faccd67280b9a9ebc2b7f
   RNVectorIcons: bc69e6a278b14842063605de32bec61f0b251a59
   RNVoipPushNotification: 6b38227bbbb2359dc11cbf826044f8ed4bd8de36
-  SDWebImage: 4dc3e42d9ec0c1028b960a33ac6b637bb432207b
-  SDWebImageWebPCoder: d0dac55073088d24b2ac1b191a71a8f8d0adac21
+  SDWebImage: a7f831e1a65eb5e285e3fb046a23fcfbf08e696d
+  SDWebImageWebPCoder: f93010f3f6c031e2f8fb3081ca4ee6966c539815
   Stripe: 22c1b8da5ee20a1aaf40fd198160efa72e71644a
   stripe-react-native: 980f3d19f52a7dc4b373c6c20d30ebd760bc39e5
   StripeCore: 91ea038ac0abbb72f11014044dfd1e5d39089714
   StripeUICore: 7edf64b24c9c178bfd97e988f2cffdbb7a7628b0
   TOCropViewController: 3105367e808b7d3d886a74ff59bf4804e7d3ab38
-  TwilioVideo: f8c75425bce3f41912bb24352154b0502d89a9b3
+  TwilioVideo: 4afaac028c5886f2f3b313a9fcc146a6b7ca34e2
   UMAppLoader: 21af63390e55c82e037fb9752d93114a80ecf16e
-  UMCore: 2f671796d7439604a1cf8ac7bbe5809cd5c50437
-  UMReactNativeAdapter: f808906d586a16cebdc3844d86e1bdb8f114a873
+  UMCore: ce3a4faa010239063b8343895b29a6d97b01069d
+  UMReactNativeAdapter: d03cefd0e4e4179ab8c490408589f1c8a6c8b785
   UMTaskManagerInterface: 2be431101b73604e64fbfffcf759336f9d8fccbb
   Yoga: 575c581c63e0d35c9a83f4b46d01d63abc1100ac
 
 PODFILE CHECKSUM: ea1857326537ed82ea87f8fc71571a826bd4a95a
 
-COCOAPODS: 1.10.1
+COCOAPODS: 1.11.2
