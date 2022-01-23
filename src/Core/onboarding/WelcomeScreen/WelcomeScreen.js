@@ -3,6 +3,8 @@ import Button from 'react-native-button'
 import { AppState, ImageBackground, Keyboard, Platform, Text, View, TouchableOpacity, Image, TextInput } from 'react-native'
 import { useDispatch, useSelector } from 'react-redux'
 import messaging from '@react-native-firebase/messaging'
+// import * as RNLocalize from "expo-localization";
+import DropDownPicker from 'react-native-dropdown-picker';
 import TNActivityIndicator from '../../truly-native/TNActivityIndicator'
 import { IMLocalized } from '../../localization/IMLocalization'
 import dynamicStyles from './styles'
@@ -15,11 +17,29 @@ import { connect } from 'react-redux'
 import { KeyboardAwareScrollView } from 'react-native-keyboard-aware-scroll-view'
 import { localizedErrorMessage } from '../utils/ErrorCode'
 import { ConfigData } from '../../../config/config';
+import {setI18nConfig} from '../../../Core/localization/IMLocalization'
+
 
 const WelcomeScreen = props => {
   const currentUser = useSelector(state => state.auth.user)
-
   const dispatch = useDispatch()
+  const [open, setOpen] = useState(false);
+  const [value, setValue] = useState(null);
+  const [items, setItems] = useState([
+    {label: 'Română', value: 'ro'},
+    {label: 'English', value: 'en'}
+  ]);
+  // useEffect(() => {
+  //   RNLocalize.addEventListener("change", handleLocalizationChange);
+  //   return () => {
+  //     RNLocalize.removeEventListener("change", handleLocalizationChange);
+  //   };
+  // }, []);
+
+  const handleLocalizationChange = (language) => {
+    setI18nConfig(language);
+    // useForceUpdate();
+  };
 
   const [isLoading, setIsLoading] = useState(true)
   const appStyles = props?.appStyles
@@ -273,6 +293,30 @@ const WelcomeScreen = props => {
         {IMLocalized('Sign Up')}
       </Button>
     </View>
+    <View style={styles.languagePickerView}>
+      <DropDownPicker
+      open={open}
+      value={value}
+      items={items}
+      setOpen={setOpen}
+      setValue={setValue}
+      setItems={setItems}
+      onSelectItem={(item) => {
+        handleLocalizationChange(item.value);
+      }}
+      style={{
+        backgroundColor: "#4395f8",
+        height: 40,
+      }}
+      textStyle={{
+        fontSize: 14,
+        color: '#000'
+      }}
+      containerStyle={{
+        backgroundColor: "#4395f8",
+      }}
+    />
+      </View>
     </ImageBackground>
     </KeyboardAwareScrollView>
   )

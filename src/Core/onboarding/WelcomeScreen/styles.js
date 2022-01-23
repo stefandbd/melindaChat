@@ -125,6 +125,11 @@ const dynamicStyles = (appStyles, colorScheme) => {
       padding: 4,
       color: 'white',
     },
+    languagePickerView: {
+      width: '30%',
+      alignSelf: 'center',
+      marginBottom: 30,
+    }
   })
 }
 

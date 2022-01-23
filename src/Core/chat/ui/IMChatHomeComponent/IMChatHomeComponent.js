@@ -28,9 +28,9 @@ function IMChatHomeComponent(props) {
   const defaultEmptyStateConfig = {
     title: IMLocalized('No Conversations'),
     description: IMLocalized(
-      'Add some friends and start chatting with them. Your conversations will show up here.',
+      'Add friends and start conversations',
     ),
-    buttonName: IMLocalized('Add friends'),
+    buttonName: IMLocalized('Add Friends'),
     onPress: onEmptyStatePress,
   }
 

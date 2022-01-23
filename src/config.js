@@ -1,7 +1,7 @@
 import { IMLocalized, setI18nConfig } from './Core/localization/IMLocalization'
 import DynamicAppStyles from './DynamicAppStyles'
 
-setI18nConfig()
+setI18nConfig('ro')
 
 const regexForNames = /^[a-zA-Z]{2,25}$/
 const regexForPhoneNumber = /\d{9}$/
