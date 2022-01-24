@@ -5,6 +5,7 @@ import {
   Text,
 } from 'react-native'
 import { connect } from 'react-redux'
+import { useSelector } from 'react-redux'
 
 import dynamicStyles from './styles'
 import { useColorScheme } from 'react-native-appearance'
@@ -15,11 +16,11 @@ import ActionButton from '../../../components/ActionButton';
 const DashboardScreen = props => {
   const appConfig = props.route.params.appConfig
   const authManager = props.route.params.authManager
-
+  const currentUser = useSelector(state => state.auth.user)
+  const firstName = currentUser.firstName;
   const appStyles = props.route.params.appStyles
   const colorScheme = useColorScheme()
   const styles = dynamicStyles(appStyles, colorScheme)
-  const firstName = props.route.params.user.firstName;
 
   const onChatPress = () => {
               props.navigation.reset({

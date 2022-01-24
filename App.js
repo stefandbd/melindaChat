@@ -25,7 +25,7 @@ const App = (props) => {
 
   useEffect(() => {
     LogBox.ignoreAllLogs(true);
-    setI18nConfig();
+    setI18nConfig('ro');
     // RNLocalize.addEventListener("change", handleLocalizationChange);
     Appearance.addChangeListener(({ colorScheme }) => {
       setColorScheme(colorScheme);

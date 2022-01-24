@@ -5,7 +5,7 @@ import { I18nManager } from 'react-native'
 
 export const translationGetters = {
   // lazy requires (metro bundler does not support symlinks)
-  ar: () => require('../../Translations/ar.json'),
+  ro: () => require('../../Translations/ro.json'),
   en: () => require('../../Translations/en.json'),
   fr: () => require('../../Translations/fr.json'),
 }
@@ -16,7 +16,7 @@ export const IMLocalized = memoize(
   (key, config) => (config ? key + JSON.stringify(config) : key),
 )
 
-export const setI18nConfig = () => {
+export const setI18nConfig = (customLanguage) => {
   // fallback if no available language fits
   const fallback = { languageTag: 'en', isRTL: false }
 
@@ -26,8 +26,11 @@ export const setI18nConfig = () => {
   let localeLanguageTag = Localization.locale
   let isRTL = Localization.isRTL
 
-  if (localeLanguageTag) {
+  if (localeLanguageTag && !customLanguage) {
     localeLanguageTag = 'en'
+    isRTL = false
+  } else if(customLanguage) {
+    localeLanguageTag = customLanguage
     isRTL = false
   }
 
