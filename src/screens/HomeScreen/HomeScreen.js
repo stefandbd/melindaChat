@@ -34,6 +34,7 @@ const HomeScreen = props => {
     navigation.setOptions({
       headerTitle: IMLocalized('Home'),
       headerRight: () => (
+        currentUser.admin &&
         <TNTouchableIcon
           imageStyle={{ tintColor: currentTheme.fontColor }}
           iconSource={AppStyles.iconSet.inscription}

@@ -212,12 +212,12 @@ const ChatConfig = {
           {
             ...(Platform.OS === 'ios'
               ? {
-                  displayName: IMLocalized('Enable Face ID / Touch ID'),
-                  type: 'switch',
-                  editable: true,
-                  key: 'face_id_enabled',
-                  value: false,
-                }
+                displayName: IMLocalized('Enable Face ID / Touch ID'),
+                type: 'switch',
+                editable: true,
+                key: 'face_id_enabled',
+                value: false,
+              }
               : {}),
           },
         ],

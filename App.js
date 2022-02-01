@@ -42,14 +42,14 @@ const App = (props) => {
 
   return (
     <Provider store={reduxStore}>
-       <StripeProvider
-          publishableKey={`${ConfigData.publishKeyTest}`}
-          merchantIdentifier="merchant.melinda"
-        >
-      <AppearanceProvider>
-        <StatusBar />
-        <MainNavigator screenProps={{ theme: colorScheme }} />
-      </AppearanceProvider>
+      <StripeProvider
+        publishableKey={`${ConfigData.publishKeyTest}`}
+        merchantIdentifier="merchant.melinda"
+      >
+        <AppearanceProvider>
+          <StatusBar />
+          <MainNavigator screenProps={{ theme: colorScheme }} />
+        </AppearanceProvider>
       </StripeProvider>
     </Provider>
   );
