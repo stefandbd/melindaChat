@@ -573,7 +573,7 @@ PODS:
   - StripeCore (21.9.1)
   - StripeUICore (21.9.1):
     - StripeCore (= 21.9.1)
-  - TOCropViewController (2.6.0)
+  - TOCropViewController (2.6.1)
   - TwilioVideo (4.6.3)
   - UMAppLoader (2.2.0)
   - UMCore (7.1.2)
@@ -892,7 +892,7 @@ SPEC CHECKSUMS:
   ExpoModulesCore: 2734852616127a6c1fc23012197890a6f3763dc7
   FacebookSDK: 4b9bb8e2824898b47f18c666dc145c09b40609e6
   FBLazyVector: e686045572151edef46010a6f819ade377dfeb4b
-  FBReactNativeSpec: 80e335293d7cdf8272edb43ea0ba4be8715470ea
+  FBReactNativeSpec: 645ece05e31963955487db5b8564f1206b3b30b4
   FBSDKCoreKit: dace5abafc2fd9272733e6d027bcf18102712117
   Firebase: 73c3e3b216ec1ecbc54d2ffdd4670c65c749edb1
   FirebaseAnalytics: dcb92c7c9ef4fa7ffac276e8f87bd4fc8c97f1b8
@@ -979,7 +979,7 @@ SPEC CHECKSUMS:
   stripe-react-native: 980f3d19f52a7dc4b373c6c20d30ebd760bc39e5
   StripeCore: 91ea038ac0abbb72f11014044dfd1e5d39089714
   StripeUICore: 7edf64b24c9c178bfd97e988f2cffdbb7a7628b0
-  TOCropViewController: 3105367e808b7d3d886a74ff59bf4804e7d3ab38
+  TOCropViewController: edfd4f25713d56905ad1e0b9f5be3fbe0f59c863
   TwilioVideo: 4afaac028c5886f2f3b313a9fcc146a6b7ca34e2
   UMAppLoader: 21af63390e55c82e037fb9752d93114a80ecf16e
   UMCore: ce3a4faa010239063b8343895b29a6d97b01069d

@@ -25,8 +25,8 @@ const IMFriendItem = memo(props => {
     : FriendshipConstants.localizedActionTitle(item.type)
 
   var name = 'No name'
-  if (user.firstName && user.lastName) {
-    name = user.firstName + ' ' + user.lastName
+  if (user.nickName) {
+    name = user.nickName
   } else if (user.fullname) {
     name = user.fullname
   } else if (user.firstName) {

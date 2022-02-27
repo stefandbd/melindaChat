@@ -28,7 +28,7 @@ function StoryItem(props) {
   const refs = useRef()
   const colorScheme = useColorScheme()
   const styles = dynamicStyles(appStyles, colorScheme)
-  const lastName = item.lastName || ''
+  const nickName = item.nickName || ''
   return (
     <TouchableOpacity
       key={index}
@@ -48,7 +48,7 @@ function StoryItem(props) {
           style={[
             styles.text,
             textStyle,
-          ]}>{`${item.firstName} ${lastName}`}</Text>
+          ]}>{nickName}</Text>
       )}
     </TouchableOpacity>
   )

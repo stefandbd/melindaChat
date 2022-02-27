@@ -61,11 +61,11 @@ export const hydrateSocialChatFeedItem = async (
   const timestamp = currentTimestamp()
   const feedItemTitleForSender =
     otherParticipants?.length == 1
-      ? otherParticipants[0].firstName + ' ' + otherParticipants[0].lastName
+      ? otherParticipants[0].nickName
       : channel.name
   const feedItemTitleForRecipients =
     otherParticipants?.length == 1
-      ? sender.firstName + ' ' + sender.lastName
+      ? sender.nickName
       : channel.name
 
   // We update the chat feed for the sender user
@@ -131,7 +131,7 @@ export const sendMessage = (
       recipientID: '',
       recipientLastName: '',
       recipientProfilePictureURL: '',
-      senderFirstName: sender.firstName || sender.fullname,
+      senderFirstName: sender.nickName,
       senderID: userID,
       senderLastName: '',
       senderProfilePictureURL: profilePictureURL,

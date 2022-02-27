@@ -63,7 +63,7 @@ function IMCreateGroupComponent(props) {
           participants={[item]}
           appStyles={appStyles}
         />
-        <Text style={styles.name}>{item.firstName}</Text>
+        <Text style={styles.name}>{item.nickName}</Text>
       </View>
       <View style={styles.addFlexContainer}>
         {item.checked && (

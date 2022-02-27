@@ -31,7 +31,7 @@ function TNStoriesTray(props) {
     return (
       <TNStoryItem
         onPress={onStoryItemPress}
-        item={{ ...item, lastName: displayLastName ? item.lastName : ' ' }}
+        item={{ ...item, lastName: displayLastName ? item.nickName : ' ' }}
         index={index}
         title={true}
         appStyles={appStyles}

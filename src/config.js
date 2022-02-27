@@ -112,7 +112,7 @@ const ChatConfig = {
       editable: true,
       regex: regexForNames,
       key: 'firstName',
-      placeholder: 'First Name',
+      placeholder: IMLocalized('First Name'),
     },
     {
       displayName: IMLocalized('Last Name'),
@@ -120,7 +120,15 @@ const ChatConfig = {
       editable: true,
       regex: regexForNames,
       key: 'lastName',
-      placeholder: 'Last Name',
+      placeholder: IMLocalized('Last Name'),
+    },
+    {
+      displayName: IMLocalized('Nick Name'),
+      type: 'ascii-capable',
+      editable: true,
+      regex: regexForNames,
+      key: 'nickName',
+      placeholder: IMLocalized('Nick Name'),
     },
     {
       displayName: IMLocalized('E-mail Address'),
@@ -128,7 +136,7 @@ const ChatConfig = {
       editable: true,
       regex: regexForNames,
       key: 'email',
-      placeholder: 'E-mail Address',
+      placeholder: IMLocalized('E-mail Address'),
       autoCapitalize: 'none',
     },
     {
@@ -138,7 +146,7 @@ const ChatConfig = {
       editable: true,
       regex: regexForNames,
       key: 'password',
-      placeholder: 'Password',
+      placeholder: IMLocalized('Password'),
       autoCapitalize: 'none',
     },
     {
@@ -148,7 +156,7 @@ const ChatConfig = {
       editable: true,
       regex: regexForNames,
       key: 'repassword',
-      placeholder: 'Repeat Password',
+      placeholder: IMLocalized('Repeat Password'),
       autoCapitalize: 'none',
     },
   ],

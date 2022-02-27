@@ -56,7 +56,7 @@ const signInWithCredential = (authManager, credential, appIdentifier) => {
       .signInWithCredential(credential)
       .then(response => {
         const isNewUser = response.additionalUserInfo.isNewUser
-        const { first_name, last_name, family_name, given_name } =
+        const { first_name, last_name, family_name, given_name, nick_name} =
           response.additionalUserInfo.profile
         const { uid, email, phoneNumber, photoURL } = response.user
         const defaultProfilePhotoURL =
@@ -69,6 +69,7 @@ const signInWithCredential = (authManager, credential, appIdentifier) => {
             email: email || '',
             firstName: first_name || given_name || '',
             lastName: last_name || family_name || '',
+            nickName: nick_name || '',
             phone: phoneNumber || '',
             profilePictureURL: photoURL || defaultProfilePhotoURL,
             userID: uid,
@@ -128,7 +129,7 @@ export const register = (userDetails, appIdentifier) => {
     email,
     firstName,
     lastName,
-    username,
+    nickName,
     password,
     phone,
     profilePictureURL,
@@ -149,7 +150,7 @@ export const register = (userDetails, appIdentifier) => {
           email,
           firstName: firstName || '',
           lastName: lastName || '',
-          username: username || '',
+          nickName: nickName || '',
           phone: phone || '',
           profilePictureURL,
           location: location || '',
@@ -361,7 +362,7 @@ export const registerWithPhoneNumber = (
   const {
     firstName,
     lastName,
-    username,
+    nickName,
     phone,
     profilePictureURL,
     location,
@@ -383,7 +384,7 @@ export const registerWithPhoneNumber = (
           userID: uid, // legacy reasons
           firstName: firstName || '',
           lastName: lastName || '',
-          username: username || '',
+          nickName: nickName || '',
           phone,
           profilePictureURL,
           location: location || '',

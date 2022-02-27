@@ -99,7 +99,7 @@ const sendCallNotification = async (sender, recipient, callType, callID) => {
       senderID: sender.id,
       callType,
       callID,
-      callerName: sender.firstName,
+      callerName: sender.nickName,
       priority: 'high',
       contentAvailable: true,
     },

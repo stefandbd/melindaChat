@@ -17,7 +17,7 @@ const DashboardScreen = props => {
   const appConfig = props.route.params.appConfig
   const authManager = props.route.params.authManager
   const currentUser = useSelector(state => state.auth.user)
-  const firstName = currentUser.firstName;
+  const nickName = currentUser.nickName;
   const appStyles = props.route.params.appStyles
   const colorScheme = useColorScheme()
   const styles = dynamicStyles(appStyles, colorScheme)
@@ -35,7 +35,7 @@ const DashboardScreen = props => {
     resizeMode='cover'
     source={AppImages.bgImage}>
     <View style={styles.container}>
-   <Text style={styles.greetingText}>Salutari {firstName}!</Text>
+   <Text style={styles.greetingText}>Salutari {nickName}!</Text>
    <ActionButton
                         buttonColor="transparent"
                         icon={<Text style={styles.chatButtonText}>CHAT</Text>}

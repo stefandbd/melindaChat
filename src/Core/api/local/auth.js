@@ -16,6 +16,7 @@ import { mockData } from '../../onboarding/utils/api/local/localData'
  *    email,
  *    firstName,
  *    lastName,
+ *    nickName,
  *    profilePictureURL,
  *  };
  * @param {function} resolve this callback get invoked after the auth state of the user has been determined
