@@ -393,7 +393,7 @@ const IMChatScreen = props => {
     const isGroupChat = channel.name && channel.name.length > 0
     const fromTitle = isGroupChat
       ? channel.name
-      : sender.firstName + ' ' + sender.lastName
+      : sender.nickName
     var message
     if (isGroupChat) {
       if (downloadObject) {
@@ -402,17 +402,11 @@ const IMChatScreen = props => {
           downloaddownloadObjectURL.mime.startsWith('video')
         ) {
           message =
-            sender.firstName +
-            ' ' +
-            sender.lastName +
-            ' ' +
+            sender.nickName
             IMLocalized('sent a video.')
         } else {
           message =
-            sender.firstName +
-            ' ' +
-            sender.lastName +
-            ' ' +
+            sender.nickName
             IMLocalized('sent a photo.')
         }
       } else {
@@ -421,15 +415,15 @@ const IMChatScreen = props => {
     } else {
       if (downloadObject) {
         if (downloadObject.mime && downloadObject.mime.startsWith('video')) {
-          message = sender.firstName + ' ' + IMLocalized('sent you a video.')
+          message = sender.nickName + ' ' + IMLocalized('sent you a video.')
         } else if (
           downloadObject.mime &&
           downloadObject.mime.startsWith('audio')
         ) {
           message =
-            sender.firstName + ' ' + IMLocalized('sent you an audio message.')
+            sender.nickName + ' ' + IMLocalized('sent you an audio message.')
         } else {
-          message = sender.firstName + ' ' + IMLocalized('sent you a photo.')
+          message = sender.nickName + ' ' + IMLocalized('sent you a photo.')
         }
       } else {
         message = inputValue
