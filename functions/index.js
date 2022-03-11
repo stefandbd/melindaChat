@@ -45,3 +45,13 @@ exports.getSubscriptionStatus = functions.https.onRequest((async (req, res) => {
     });
     res.json({ 'customer': customers });
 }));
+
+exports.deleteCustomer = functions.https.onRequest((async (req, res) => {
+    const { customerId } = req.body;
+    const deleted = await stripe.customers.del(customerId).then(res => {
+        return res.data;
+    }).then(res => {
+        return res.data;
+    });
+    res.json({ deleted });
+}));

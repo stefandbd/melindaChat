@@ -9,7 +9,7 @@ import TNActivityIndicator from '../../truly-native/TNActivityIndicator'
 import { IMLocalized } from '../../localization/IMLocalization'
 import dynamicStyles from './styles'
 import { useColorScheme } from 'react-native-appearance'
-import { setUserData } from '../redux/auth'
+import { setUserData, setUserStripeData } from '../redux/auth'
 import { updateUser } from '../../api/firebase/auth'
 import { IMDismissButton } from '../../truly-native';
 import { AppImages } from '../../../theme'
@@ -87,9 +87,13 @@ const WelcomeScreen = props => {
               )
               .then(response => {
                 if (response?.user) {
-                  const user = response.user
+                  const user = response.user;
+                  response.user['stripeCustomerInfo'] = data.customer[0];
                   props.setUserData({
                     user: response.user,
+                  })
+                  props.setUserStripeData({
+                    stripeUser: data.customer[0],
                   })
                   Keyboard.dismiss()
                   // props.navigation.reset({
@@ -323,6 +327,6 @@ const WelcomeScreen = props => {
 }
 
 export default connect(null, {
-  setUserData,
+  setUserData, setUserStripeData
 })(WelcomeScreen)
 

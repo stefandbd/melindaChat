@@ -269,9 +269,8 @@ const onOpenModal = () => {
               })
               Keyboard.dismiss();
               sendConfirmationEmail(userDetails.email);
-              props.navigation.reset({
-                index: 0,
-                routes: [{ name: 'MainStack', params: { user: user } }],
+              props.navigation.navigate('LoginStack', {
+                screen: 'Welcome',
               })
             } else {
               setLoadingUI(false);

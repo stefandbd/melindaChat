@@ -8,6 +8,8 @@ const getSubscriptionStatus = baseUrl + 'getSubscriptionStatus';
 const payStripe = baseUrl + 'payStripe';
 const paySubscription = baseUrl + 'paySubscription';
 
+const deleteCustomer = baseUrl + 'deleteCustomer';
+
 
 let ConfigData = {
     baseUrl,
@@ -16,6 +18,7 @@ let ConfigData = {
     paySubscription,
     publishKeyTest,
     pushNotificationSecretKey,
+    deleteCustomer,
 };
 
 export { ConfigData };
