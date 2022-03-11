@@ -13,6 +13,8 @@ import {
 } from '../../../onboarding/utils/ErrorCode'
 import { authManager } from '../../../onboarding/utils/api'
 import dynamicStyles from './styles'
+import { ConfigData } from '../../../../../src/config/config';
+
 
 export default function IMEditProfileScreen(props) {
   const appStyles = props.route.params.appStyles
@@ -22,9 +24,9 @@ export default function IMEditProfileScreen(props) {
   let currentTheme = appStyles.navThemeConstants[colorScheme]
 
   const currentUser = useSelector(state => state.auth.user)
+  const stripeUser = useSelector(state => state.auth.stripeUser)
   const dispatch = useDispatch()
   const styles = dynamicStyles(appStyles, colorScheme)
-
   const form = props.route.params.form
   const onComplete = props.route.params.onComplete
 
@@ -127,9 +129,9 @@ export default function IMEditProfileScreen(props) {
 
   const onDeletePrompt = () => {
     Alert.alert(
-      IMLocalized('Confirmation'),
+      IMLocalized('Delete Confirmation'),
       IMLocalized(
-        'Are you sure you want to remove your account? This will delete all your data and the action is not reversible.',
+        'Delete Message',
       ),
       [
         {
@@ -146,7 +148,7 @@ export default function IMEditProfileScreen(props) {
     )
   }
 
-  const onDeleteAccount = () => {
+  const onDeleteAccount = async () => {
     authManager.deleteUser(currentUser?.id, response => {
       if (response.success) {
         Alert.alert(
@@ -162,7 +164,6 @@ export default function IMEditProfileScreen(props) {
             },
           ],
         })
-
         return
       }
       if (response.error === ErrorCode.requiresRecentLogin) {
@@ -177,6 +178,22 @@ export default function IMEditProfileScreen(props) {
         IMLocalized(IMLocalized('We were not able to delete your account')),
       )
     })
+    await fetch(`${ConfigData.deleteCustomer}`, {
+      method: 'DELETE',
+      headers: {
+          "Content-Type": "application/json",
+      },
+      body: JSON.stringify({
+          'customerId': stripeUser.id,
+      })
+  })
+      .then(res => {
+          console.log('DELETE res', res);
+          return res.json();
+      })
+      .catch(e => {
+          console.log(e.message);
+      });
   }
 
   return (

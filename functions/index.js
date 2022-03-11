@@ -47,11 +47,11 @@ exports.getSubscriptionStatus = functions.https.onRequest((async (req, res) => {
 }));
 
 exports.deleteCustomer = functions.https.onRequest((async (req, res) => {
+    console.log('req.body --- ', req.body);
     const { customerId } = req.body;
     const deleted = await stripe.customers.del(customerId).then(res => {
-        return res.data;
-    }).then(res => {
-        return res.data;
-    });
+    console.log('res --- ', res);
+        return res;
+    })
     res.json({ deleted });
 }));
