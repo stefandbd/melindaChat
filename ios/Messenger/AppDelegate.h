@@ -7,8 +7,10 @@
 
 #import <UIKit/UIKit.h>
 #import <UMReactNativeAdapter/UMModuleRegistryAdapter.h>
+#import <UserNotifications/UNUserNotificationCenter.h>
+#import <React/RCTBridgeDelegate.h>
 
-@interface AppDelegate : UIResponder <UIApplicationDelegate>
+@interface AppDelegate : UIResponder <UIApplicationDelegate, RCTBridgeDelegate, UNUserNotificationCenterDelegate>
 
 @property (nonatomic, strong) UMModuleRegistryAdapter *moduleRegistryAdapter;
 @property (nonatomic, strong) UIWindow *window;
