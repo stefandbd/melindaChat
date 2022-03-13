@@ -65,6 +65,7 @@ const ChatConfig = {
             ? DynamicAppStyles.iconSet.users
             : DynamicAppStyles.iconSet.users_android,
         navigationPath: 'FriendsSearchStack',
+        badge: true,
       },
       {
         title: IMLocalized('Profile'),

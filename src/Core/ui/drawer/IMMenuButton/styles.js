@@ -30,6 +30,24 @@ const dynamicStyles = (appStyles, colorScheme) => {
       marginTop: 5,
       color: colorSet.mainTextColor,
     },
+    badgeContainer: {
+      width: 24,
+      height: 24,
+      borderRadius: 12,
+      display: 'flex',
+      justifyContent: 'center',
+      alignItems: 'center',
+      backgroundColor: 'red',
+      position: 'absolute',
+      bottom: 0,
+      left: 24,
+    },
+    badgeText: {
+      color: '#fff',
+      fontSize: 12,
+      fontFamily: fontSet.main,
+      fontWeight: 'bold',
+    },
   })
 }
 

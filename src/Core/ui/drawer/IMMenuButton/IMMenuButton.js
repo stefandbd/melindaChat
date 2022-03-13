@@ -16,6 +16,11 @@ const IMMenuButton = props => {
       <View style={styles.btnContainer}>
         {props.source && <Image source={props.source} style={styles.btnIcon} />}
         <Text style={styles.btnText}>{props.title}</Text>
+        {props.badge && 
+      <View style={styles.badgeContainer}>
+      <Text style={styles.badgeText}>{props.friendsNotification}</Text>
+      </View>
+      }
       </View>
     </TouchableHighlight>
   )
