@@ -14,14 +14,11 @@ import { AppImages } from '../../../theme'
 import ActionButton from '../../../components/ActionButton';
 
 const DashboardScreen = props => {
-  const appConfig = props.route.params.appConfig
-  const authManager = props.route.params.authManager
   const currentUser = useSelector(state => state.auth.user)
   const nickName = currentUser.nickName;
   const appStyles = props.route.params.appStyles
   const colorScheme = useColorScheme()
   const styles = dynamicStyles(appStyles, colorScheme)
-
   const onChatPress = () => {
               props.navigation.reset({
               index: 0,

@@ -14,6 +14,8 @@ const IMDrawerMenu = props => {
   const styles = dynamicStyles(appStyles, colorScheme)
   const { navigation } = props
   const currentUser = useSelector(state => state.auth.user)
+  const friendships = useSelector(state => state.friends.friendships)
+
   const dispatch = useDispatch()
 
   const defaultProfilePhotoURL =
@@ -42,6 +44,8 @@ const IMDrawerMenu = props => {
       containerStyle={props.menuItemStyle}
       appStyles={appStyles}
       key={index}
+      badge={menuItem.badge}
+      friendsNotification={friendships?.length}
       onPress={() => {
         navigation.navigate(menuItem.navigationPath, {
           appStyles: appStyles,

@@ -15,7 +15,7 @@ function IMConversationView(props) {
   const userID = user.userID || user.id
 
   let title = item.title
-  // console.log('item',item)
+  const unReadItem = !item.markedAsRead;
 
   const getIsRead = () => {
     return item.markedAsRead
@@ -29,6 +29,11 @@ function IMConversationView(props) {
         participants={item.participants}
         appStyles={appStyles}
       />
+       {unReadItem && 
+      <View style={styles.badgeContainer}>
+      <Text style={styles.badgeText}>1+</Text>
+      </View>
+      }
       <View style={styles.chatItemContent}>
         <Text
           style={[styles.chatFriendName, !getIsRead() && styles.unReadmessage]}>
