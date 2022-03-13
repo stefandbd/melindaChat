@@ -3,9 +3,9 @@
 <plist version="1.0">
 <dict>
 	<key>CLIENT_ID</key>
-	<string>576394780151-4rsjdb5vid8b5q0512o8vll80nhavese.apps.googleusercontent.com</string>
+	<string>576394780151-e1hkn8hmhnoansdq4penrcdoh653hkt9.apps.googleusercontent.com</string>
 	<key>REVERSED_CLIENT_ID</key>
-	<string>com.googleusercontent.apps.576394780151-4rsjdb5vid8b5q0512o8vll80nhavese</string>
+	<string>com.googleusercontent.apps.576394780151-e1hkn8hmhnoansdq4penrcdoh653hkt9</string>
 	<key>API_KEY</key>
 	<string>AIzaSyCkA9rX9sP_dYjn2DQzN0Jr_wpSGoS0XWQ</string>
 	<key>GCM_SENDER_ID</key>
@@ -13,7 +13,7 @@
 	<key>PLIST_VERSION</key>
 	<string>1</string>
 	<key>BUNDLE_ID</key>
-	<string>org.reactjs.native.example.melinda</string>
+	<string>com.devnative.melinda</string>
 	<key>PROJECT_ID</key>
 	<string>melinda-60bbf</string>
 	<key>STORAGE_BUCKET</key>
@@ -29,7 +29,7 @@
 	<key>IS_SIGNIN_ENABLED</key>
 	<true></true>
 	<key>GOOGLE_APP_ID</key>
-	<string>1:576394780151:ios:2ed91477d20e158bf762f2</string>
+	<string>1:576394780151:ios:34d7a29cd8fb855ff762f2</string>
 	<key>DATABASE_URL</key>
 	<string>https://melinda-60bbf.firebaseio.com</string>
 </dict>
