@@ -12,7 +12,7 @@ const IMMenuButton = props => {
   const filterInboundFriends = friendships?.filter((friend) => {
     return friend.type === 'inbound'
   });
-  const inboundLength = filterInboundFriends?.length;
+  const inboundLength = filterInboundFriends?.length > 0 ? filterInboundFriends?.length : '';
 
   return (
     <TouchableHighlight
@@ -22,7 +22,7 @@ const IMMenuButton = props => {
       <View style={styles.btnContainer}>
         {props.source && <Image source={props.source} style={styles.btnIcon} />}
         <Text style={styles.btnText}>{props.title}</Text>
-        {props.badge && 
+        {filterInboundFriends?.length > 0 && props.badge &&  
       <View style={styles.badgeContainer}>
       <Text style={styles.badgeText}>{inboundLength}</Text>
       </View>
