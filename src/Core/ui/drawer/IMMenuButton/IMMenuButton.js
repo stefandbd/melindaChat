@@ -1,8 +1,9 @@
-import React from 'react'
+import React, { useEffect } from 'react'
 import { useSelector } from 'react-redux'
 import { Image, Text, TouchableHighlight, View } from 'react-native'
 import { useColorScheme } from 'react-native-appearance'
 import dynamicStyles from './styles'
+import PushNotificationIOS from '@react-native-community/push-notification-ios';
 
 const IMMenuButton = props => {
   const { appStyles } = props
@@ -13,6 +14,12 @@ const IMMenuButton = props => {
     return friend.type === 'inbound'
   });
   const inboundLength = filterInboundFriends?.length > 0 ? filterInboundFriends?.length : '';
+
+  useEffect(()=>{
+    if(filterInboundFriends && filterInboundFriends.length >0){
+      PushNotificationIOS.setApplicationIconBadgeNumber(filterInboundFriends.length);
+    }
+  })
 
   return (
     <TouchableHighlight
