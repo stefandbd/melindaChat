@@ -1,10 +1,12 @@
 import React, { useState, useEffect } from 'react'
 import PropTypes from 'prop-types'
-import { FlatList, View } from 'react-native'
+import { FlatList, View, Animated, TouchableOpacity, Image } from 'react-native'
 import { useColorScheme } from 'react-native-appearance'
 import ThreadItem from './ThreadItem'
 import TypingIndicator from './TypingIndicator'
 import dynamicStyles from './styles'
+import Swipeable from 'react-native-gesture-handler/Swipeable';
+import { AppImages } from '../../../theme'
 
 function MessageThread(props) {
   const {
@@ -15,6 +17,8 @@ function MessageThread(props) {
     onSenderProfilePicturePress,
     onMessageLongPress,
     channelItem,
+    onSwipeReplyPress,
+    setTempItem,
   } = props
   const colorScheme = useColorScheme()
   const styles = dynamicStyles(appStyles, colorScheme)
@@ -26,6 +30,28 @@ function MessageThread(props) {
       getUsersTyping()
     }
   }, [channelItem])
+
+  const renderLeftActions = (progress, dragX) => {
+    const trans = dragX.interpolate({
+      inputRange: [0, 50, 100, 101],
+      outputRange: [-20, 0, 0, 1],
+    });
+    return (
+      <TouchableOpacity style={styles.rightAction}>
+        <Animated.View
+          style={[
+            styles.actionText,
+            {
+              transform: [{ translateX: trans }],
+            },
+          ]}>
+   <Image
+    style={{width: 24, height: 24, marginLeft: 8, marginTop: 8}}
+    source={AppImages.reply} />
+        </Animated.View>
+      </TouchableOpacity>
+    );
+  };
 
   const getUsersTyping = () => {
     const userID = user.id || user.userID
@@ -62,6 +88,7 @@ function MessageThread(props) {
   const renderChatItem = ({ item, index }) => {
     const isRecentItem = 0 === index
     return (
+      <Swipeable renderLeftActions={renderLeftActions} onSwipeableOpen={()=>onSwipeReplyPress(item,0)} onSwipeableWillOpen={()=>setTempItem(item)}>
       <ThreadItem
         item={item}
         key={'chatitem' + index}
@@ -72,6 +99,7 @@ function MessageThread(props) {
         onMessageLongPress={onMessageLongPress}
         isRecentItem={isRecentItem}
       />
+      </Swipeable>
     )
   }
 
