@@ -14,7 +14,6 @@ const IMDrawerMenu = props => {
   const styles = dynamicStyles(appStyles, colorScheme)
   const { navigation } = props
   const currentUser = useSelector(state => state.auth.user)
-  const friendships = useSelector(state => state.friends.friendships)
   const dispatch = useDispatch()
 
   const defaultProfilePhotoURL =

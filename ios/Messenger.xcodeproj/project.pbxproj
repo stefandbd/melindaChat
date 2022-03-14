@@ -47,6 +47,7 @@
 		8DF26EC932DC4B3D94B00304 /* Rembank.otf in Resources */ = {isa = PBXBuildFile; fileRef = B79FF48DE06F474CA3D5CB1E /* Rembank.otf */; };
 		90960138E8E84B178257251D /* SF-Pro-Text-Medium.otf in Resources */ = {isa = PBXBuildFile; fileRef = 2D2784D3EE9D4523B93250B6 /* SF-Pro-Text-Medium.otf */; };
 		92D4FB5168BC4B469DC2CE0B /* AdageScriptJF.ttf in Resources */ = {isa = PBXBuildFile; fileRef = B627D581E6D04934908DCD57 /* AdageScriptJF.ttf */; };
+		92DFD0B427DE79C800497EDA /* libRNCPushNotificationIOS.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 92DFD0B327DE79C800497EDA /* libRNCPushNotificationIOS.a */; };
 		961E7A535BAF4D108245AE18 /* SF-Pro-Display-ThinItalic.otf in Resources */ = {isa = PBXBuildFile; fileRef = F5601D1443574396A6AE5359 /* SF-Pro-Display-ThinItalic.otf */; };
 		972D8097F305737B4C21E98D /* libPods-Messenger.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 21F8B1DB64D3E745C527D3B4 /* libPods-Messenger.a */; };
 		973D027270CF418B9C13553C /* SF-Pro-Display-SemiboldItalic.otf in Resources */ = {isa = PBXBuildFile; fileRef = C216CCA933354B589C9A9AB5 /* SF-Pro-Display-SemiboldItalic.otf */; };
@@ -419,6 +420,7 @@
 		8900C1AB43CC49248B084717 /* Zocial.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = Zocial.ttf; path = "../node_modules/react-native-vector-icons/Fonts/Zocial.ttf"; sourceTree = "<group>"; };
 		8B76B244BF66497D929A2294 /* Entypo.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = Entypo.ttf; path = "../node_modules/react-native-vector-icons/Fonts/Entypo.ttf"; sourceTree = "<group>"; };
 		8DF942E0915788AC557F60DF /* Pods-Messenger.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Messenger.release.xcconfig"; path = "Pods/Target Support Files/Pods-Messenger/Pods-Messenger.release.xcconfig"; sourceTree = "<group>"; };
+		92DFD0B327DE79C800497EDA /* libRNCPushNotificationIOS.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; path = libRNCPushNotificationIOS.a; sourceTree = BUILT_PRODUCTS_DIR; };
 		9D9BF02A21B9E82F002C44BE /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = "GoogleService-Info.plist"; path = "Messenger/GoogleService-Info.plist"; sourceTree = "<group>"; };
 		A783E7F8418A418BA215A587 /* OpenSans-Regular.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = "OpenSans-Regular.ttf"; path = "../assets/fonts/OpenSans-Regular.ttf"; sourceTree = "<group>"; };
 		A8B9CBDE519D4E238BD832CF /* SF-Pro-Display-UltralightItalic.otf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = "SF-Pro-Display-UltralightItalic.otf"; path = "../assets/fonts/SFPro/SF-Pro-Display-UltralightItalic.otf"; sourceTree = "<group>"; };
@@ -457,6 +459,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				92DFD0B427DE79C800497EDA /* libRNCPushNotificationIOS.a in Frameworks */,
 				170A542023AD858F00098C02 /* libReact-CoreModules.a in Frameworks */,
 				170A541E23AD858A00098C02 /* libReact-Core.a in Frameworks */,
 				170A540423AD7F8800098C02 /* libReact-RCTVibration.a in Frameworks */,
@@ -665,6 +668,7 @@
 		2D16E6871FA4F8E400B85C8A /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				92DFD0B327DE79C800497EDA /* libRNCPushNotificationIOS.a */,
 				170A541F23AD858F00098C02 /* libReact-CoreModules.a */,
 				170A541D23AD858A00098C02 /* libReact-Core.a */,
 				170A540323AD7F8800098C02 /* libReact-RCTVibration.a */,
@@ -1399,7 +1403,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_ENTITLEMENTS = Messenger/Messenger.entitlements;
-				CURRENT_PROJECT_VERSION = 5;
+				CURRENT_PROJECT_VERSION = 6;
 				DEAD_CODE_STRIPPING = NO;
 				DEVELOPMENT_TEAM = 4T62KW9F3A;
 				ENABLE_BITCODE = NO;
@@ -1439,7 +1443,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_ENTITLEMENTS = Messenger/Messenger.entitlements;
-				CURRENT_PROJECT_VERSION = 5;
+				CURRENT_PROJECT_VERSION = 6;
 				DEVELOPMENT_TEAM = 4T62KW9F3A;
 				ENABLE_BITCODE = NO;
 				HEADER_SEARCH_PATHS = (

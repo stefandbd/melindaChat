@@ -19,7 +19,6 @@ import { localizedErrorMessage } from '../utils/ErrorCode'
 import { ConfigData } from '../../../config/config';
 import {setI18nConfig} from '../../../Core/localization/IMLocalization'
 
-
 const WelcomeScreen = props => {
   const currentUser = useSelector(state => state.auth.user)
   const dispatch = useDispatch()

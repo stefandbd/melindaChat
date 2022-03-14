@@ -1,6 +1,7 @@
-import React, { memo } from 'react'
+import React, { memo, useEffect } from 'react'
 import PropTypes from 'prop-types'
 import { View, FlatList, ActivityIndicator } from 'react-native'
+import PushNotificationIOS from '@react-native-community/push-notification-ios';
 
 import IMConversationView from '../IMConversationView'
 import dynamicStyles from './styles'
@@ -19,6 +20,15 @@ const IMConversationList = memo(props => {
   } = props
   const colorScheme = useColorScheme()
   const styles = dynamicStyles(appStyles, colorScheme)
+  const filterUnreadMessages = conversations?.filter((item) => {
+    return item.markedAsRead === false;
+  });
+
+  useEffect(()=>{
+    if(filterUnreadMessages && filterUnreadMessages.length >0){
+      PushNotificationIOS.setApplicationIconBadgeNumber(filterUnreadMessages.length);
+    }
+  })
 
   const renderConversationView = ({ item }) => (
     <IMConversationView
