@@ -47,7 +47,7 @@ function MessageThread(props) {
             },
           ]}>
           <Image
-            style={{ width: 24, height: 24, marginLeft: 8, marginTop: 8 }}
+            style={{ width: 24, height: 24, marginLeft: 8, marginTop: 8, tintColor: '#ccc' }}
             source={AppImages.reply}
           />
         </Animated.View>
