@@ -229,7 +229,6 @@ function IMChat(props) {
     if (index == 0) {
       onReplyPress(index)
     }
-
     if (index == 1) {
       onDeleteThreadItem && onDeleteThreadItem(temporaryInReplyToItem)
     }
@@ -241,6 +240,17 @@ function IMChat(props) {
     } else {
       handleOutBoundThreadItemActionSheet(index)
     }
+  }
+
+  const onSwipeReplyPress = (item, index) => {
+    if(temporaryInReplyToItem && index === 0) {
+      onReplyActionPress(item)
+      onThreadItemActionSheetDone(index);
+    }
+  }
+
+  const setTempItem = item => {
+    setTemporaryInReplyToItem(item);
   }
 
   return (
@@ -256,6 +266,8 @@ function IMChat(props) {
           onSenderProfilePicturePress={onSenderProfilePicturePress}
           onMessageLongPress={onMessageLongPress}
           channelItem={channelItem}
+          onSwipeReplyPress={onSwipeReplyPress}
+          setTempItem={setTempItem}
         />
       </KeyboardAwareView>
       <BottomInput
